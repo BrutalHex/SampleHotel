@@ -8,6 +8,14 @@
 	<PropertyGroup>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Artifacts\sample.html" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Artifacts\sample.html">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
 	
 
 	<ItemGroup>

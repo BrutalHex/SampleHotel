@@ -1,5 +1,4 @@
 ﻿using Parser.IntegrationTest.Infrastructure;
-using Fynd.Parser.ApplicationContract.DTO;
 using System.Threading.Tasks;
 using Xunit;
 using Fynd.Parser.Domain;
@@ -17,11 +16,11 @@ namespace Parser.IntegrationTest
         }
 
 
-        [Fact(DisplayName ="")]
+        [Fact]
         public async Task Test_Http_valid_post()
         {
 
-            string content=string.Empty;
+            string content=await System.IO.File.ReadAllTextAsync("./Artifacts/sample.html");
 
 
 

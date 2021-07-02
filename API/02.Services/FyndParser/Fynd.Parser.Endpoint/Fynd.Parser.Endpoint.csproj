@@ -27,6 +27,7 @@
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Configs\" />
 	  <Folder Include="Grpc\Map\" />
 	  <Folder Include="Grpc\Proto\" />
 	</ItemGroup>
