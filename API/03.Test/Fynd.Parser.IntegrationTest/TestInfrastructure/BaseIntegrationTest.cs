@@ -44,6 +44,40 @@ namespace Parser.IntegrationTest.Infrastructure
 
             HttpClient = factory.CreateClient();
         }
+        /// <summary>
+        /// compares first level properties of two given objects
+        /// </summary>
+        /// <param name="requestToSend">first object</param>
+        /// <param name="respons">second object</param>
+        /// <returns></returns>
+        protected bool HasDifferenceInValues(object requestToSend, object respons)
+        {
 
+            var responseProps = respons.GetType().GetProperties();
+            var reqProps = requestToSend.GetType().GetProperties();
+
+            var qeury = (from res in responseProps
+                         join req in reqProps
+                        on res.Name equals req.Name into all
+                         from c in all.DefaultIfEmpty()
+                         where c != null
+                         select new
+                         {
+                             res.Name,
+                             responseValue = c != null ? (c.GetValue(respons)?.ToString()) : null,
+
+                             requestValue = res?.GetValue(requestToSend)?.ToString()
+                         }).Where(a => a.requestValue != a.responseValue
+                         ).ToList();
+
+            if (qeury.Any())
+            {
+                return true;
+            }
+
+
+            return false;
+
+        }
     }
 }

@@ -21,13 +21,13 @@ namespace Fynd.Framework.Core.Extenions
                 return sentence;
             }
 
-            List<string> stringsToRemove = new List<string> { @"\r" ,@"\n"};
+            List<string> stringsToRemove = new List<string> { "\r" ,"\n"};
 
             foreach (var item in stringsToRemove)
             {
                 sentence = sentence.Replace(item,"");
             }
-            return sentence;
+            return sentence.Trim();
 
 
         }

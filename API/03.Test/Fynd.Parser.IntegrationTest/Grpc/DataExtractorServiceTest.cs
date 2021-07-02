@@ -1,4 +1,6 @@
-﻿using Parser.IntegrationTest.Infrastructure;
+﻿using Fynd.Parser.Domain;
+using Fynd.Parser.IntegrationTest.Artifacts;
+using Parser.IntegrationTest.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +18,17 @@ namespace Parser.IntegrationTest.Grpc
         }
 
 
-        [Fact]
-        public async Task Test_Valid_Html()
+        [Theory(DisplayName = "Test_Valid_Html")]
+        [MemberData(nameof(SampleHtmlData.Get), MemberType = typeof(SampleHtmlData))]
+        public async Task Test_Valid_Html(string content)
         {
-            string content = string.Empty;
+
             var transferClient = new Fynd.Parser.Endpoint.Grpc.DataExtractor.DataExtractorClient(GrpcChannel);
             var respons = await transferClient.ExtractAsync(new Fynd.Parser.Endpoint.Grpc.ExtractRequest {  Html= content });
 
-            Assert.True(true);
+            var expected = SampleHtmlData.GetMatchingDtoToProvidedHtml();
+
+            Assert.False(HasDifferenceInValues(respons, expected));
         }
         
 

@@ -10,9 +10,9 @@ namespace Fynd.Parser.Domain
     {
         public string HotelName { get; set; }
         public string Address { get; set; }
-
-        public string ClassificationAndStars { get; set; }
+        public string Stars { get; set; }
         public string ReviewPoints { get; set; }
+        public string ReviewPointsDescription { get; set; }
         public string NumberOfReviews { get; set; }
         public string Description { get; set; }
 

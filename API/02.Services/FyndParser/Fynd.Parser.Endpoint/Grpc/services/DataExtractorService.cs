@@ -38,7 +38,7 @@ namespace Fynd.Parser.Endpoint.Grpc.services
 
           var data= await _dataExtractorService.ParseHtml(request.Html);
 
-            return new ExtractResponse() ;
+            return null;
         }
     }
 }

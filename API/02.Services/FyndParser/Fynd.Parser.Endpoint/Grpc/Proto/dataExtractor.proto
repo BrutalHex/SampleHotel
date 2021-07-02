@@ -16,7 +16,14 @@ string html=1;
 
 message   ExtractResponse {
 
-bool success=1;
-string message=2;
+string hotelName=1;
+string Address=2;
+string Stars=3;
+string ReviewPoints=4;
+string ReviewPointsDescription=5;
+string NumberOfReviews=6;
+string Description=7;
+repeated string RoomCategories=8;
+repeated string AlternativeHotels=9;
 
 }
