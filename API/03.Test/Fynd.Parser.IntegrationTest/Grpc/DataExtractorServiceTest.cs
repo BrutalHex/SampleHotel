@@ -1,4 +1,5 @@
-﻿using Fynd.Parser.Domain;
+﻿using AutoMapper;
+using Fynd.Parser.Domain;
 using Fynd.Parser.IntegrationTest.Artifacts;
 using Parser.IntegrationTest.Infrastructure;
 using System;
@@ -17,20 +18,21 @@ namespace Parser.IntegrationTest.Grpc
 
         }
 
-
         [Theory(DisplayName = "Test_Valid_Html")]
         [MemberData(nameof(SampleHtmlData.Get), MemberType = typeof(SampleHtmlData))]
         public async Task Test_Valid_Html(string content)
         {
 
             var transferClient = new Fynd.Parser.Endpoint.Grpc.DataExtractor.DataExtractorClient(GrpcChannel);
-            var respons = await transferClient.ExtractAsync(new Fynd.Parser.Endpoint.Grpc.ExtractRequest {  Html= content });
+            var respons = await transferClient.ExtractAsync(new Fynd.Parser.Endpoint.Grpc.ExtractRequest { Html = content });
+
+            IMapper mapper = (IMapper)Factory.ServiceProvider.GetService(typeof(IMapper));
 
             var expected = SampleHtmlData.GetMatchingDtoToProvidedHtml();
-
-            Assert.False(HasDifferenceInValues(respons, expected));
+            var mappedresponse = mapper.Map<ExportedInformation>(respons);
+            Assert.False(HasDifferenceInValues(mappedresponse, expected));
         }
-        
+
 
     }
 }

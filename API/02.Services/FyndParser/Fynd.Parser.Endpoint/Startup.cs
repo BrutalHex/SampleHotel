@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Fynd.Parser.ApplicationContract;
 using Fynd.Parser.Application;
+using Fynd.Parser.Endpoint.Grpc.Map;
 
 namespace Fynd.Parser.Endpoint
 {
@@ -25,10 +26,10 @@ namespace Fynd.Parser.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
-       
+    
 
             services.AddTransient<IDataExtractorService, Application.DataExtractorService>();
-           
+            services.AddAutoMapper(typeof(GrpcServiceProfile));
             services.AddControllers();
 
             services.AddGrpc();

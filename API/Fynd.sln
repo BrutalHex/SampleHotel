@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Services", "02.Services"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Test", "03.Test", "{483177EE-CAB3-471E-9F1B-6FFE54ED7EBD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parser", "Parser", "{5AEDBD76-40B2-4320-9022-7CDE17B8F78F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FyndParser", "FyndParser", "{5AEDBD76-40B2-4320-9022-7CDE17B8F78F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fynd.Parser.Endpoint", "02.Services\FyndParser\Fynd.Parser.Endpoint\Fynd.Parser.Endpoint.csproj", "{1E53D35B-547F-425E-AAE7-8B1C77701EE7}"
 EndProject
@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fynd.Parser.UnitTest", "03.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fynd.Parser.IntegrationTest", "03.Test\Fynd.Parser.IntegrationTest\Fynd.Parser.IntegrationTest.csproj", "{3F12234B-5108-47B7-8023-89CA74C4F8CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fynd.Parser.ApplicationContract", "02.Services\FyndParser\Fynd.Parser.ApplicationContract\Fynd.Parser.ApplicationContract.csproj", "{83D9DC05-AB6C-45B3-9EBF-2FEFFEFC8195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fynd.Parser.ApplicationContract", "02.Services\FyndParser\Fynd.Parser.ApplicationContract\Fynd.Parser.ApplicationContract.csproj", "{83D9DC05-AB6C-45B3-9EBF-2FEFFEFC8195}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

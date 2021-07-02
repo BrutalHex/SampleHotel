@@ -1,4 +1,5 @@
-﻿using Grpc.Net.Client;
+﻿using AutoMapper;
+using Grpc.Net.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,15 @@ namespace Parser.IntegrationTest.Infrastructure
 
         public HttpClient HttpClient { get; private set; }
 
+        
+
         /// <summary>
         /// provides the basic functionality for integration tests
         /// </summary>
         /// <param name="factory"></param>
         public BaseIntegrationTest(TestWebApplicationFactory<Fynd.Parser.Endpoint.Startup> factory)
         {
+
             Factory = factory;
             _grpHttpClient = factory.CreateClientForGrpc();
             GrpcChannel = GrpcChannel.ForAddress("https://localhost:5000", new GrpcChannelOptions()
@@ -43,6 +47,10 @@ namespace Parser.IntegrationTest.Infrastructure
             });
 
             HttpClient = factory.CreateClient();
+
+             
+
+
         }
         /// <summary>
         /// compares first level properties of two given objects
