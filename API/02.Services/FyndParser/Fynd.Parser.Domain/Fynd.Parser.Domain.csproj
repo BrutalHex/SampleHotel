@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="CryptoCurrency\**" />
+	  <EmbeddedResource Remove="CryptoCurrency\**" />
+	  <None Remove="CryptoCurrency\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\01.Framework\Fynd.Framework.Core\Fynd.Framework.Core.csproj" />
+	</ItemGroup>
+</Project>

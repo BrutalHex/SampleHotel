@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  Fynd.Parser.service:
+      image: ${DOCKER_REGISTRY-}Parser
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+      ports:
+        - "5001:5001"
+        - "5000:5000"
+      volumes:
+        - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+        - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      env_file: .env
+      build:
+        context: './'
+        dockerfile: API/02.Services/FyndParser/Fynd.Parser.Endpoint/Dockerfile

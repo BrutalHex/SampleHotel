@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		
+		<PackageReference Include="MediatR" Version="9.0.0" /> 
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\01.Framework\Fynd.Framework.Core\Fynd.Framework.Core.csproj" />
+		<ProjectReference Include="..\Fynd.Parser.Domain\Fynd.Parser.Domain.csproj" />
+		<ProjectReference Include="..\Fynd.Parser.ApplicationContract\Fynd.Parser.ApplicationContract.csproj" />
+		
+	</ItemGroup>
+</Project>

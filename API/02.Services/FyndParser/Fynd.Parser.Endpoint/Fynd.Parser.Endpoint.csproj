@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Grpc\Proto\ParserConvertor.proto" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\01.Framework\Fynd.Framework.Core\Fynd.Framework.Core.csproj" />
+		<ProjectReference Include="..\Fynd.Parser.Application\Fynd.Parser.Application.csproj" />
+		<ProjectReference Include="..\Fynd.Parser.ApplicationContract\Fynd.Parser.ApplicationContract.csproj" />
+		
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+		<PackageReference Include="Google.Protobuf" Version="3.15.8" />
+		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.36.0" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.36.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.37.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Grpc\Map\" />
+	  <Folder Include="Grpc\Proto\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="Grpc\Proto\dataExtractor.proto" GrpcServices="Both" />
+	</ItemGroup>
+</Project>
