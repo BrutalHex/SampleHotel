@@ -14,7 +14,7 @@ namespace Fynd.Parser.Endpoint.Grpc.services
     /// </summary>
     /// <remarks>
     /// grpc ui command:
-    /// grpcui -proto ParserConvertor.proto -import-path "C:\projects\Test\Fynd\ParserSample\API\02.Services\FyndParser\Fynd.Parser.Endpoint\Grpc\Proto" -plaintext localhost:5000
+    /// grpcui -proto dataExtractor.proto -import-path "C:\projects\Test\fynd\API\02.Services\FyndParser\Fynd.Parser.Endpoint\Grpc\Proto" -plaintext localhost:5000
     /// </remarks>
     public class DataExtractorService : Fynd.Parser.Endpoint.Grpc.DataExtractor.DataExtractorBase
     {
